@@ -1,0 +1,36 @@
+name: Build and Deploy
+env:
+      RUNNER_DEBUG: true
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up JDK 8
+      uses: actions/setup-java@v3
+      with:
+        java-version: '8'
+        distribution: 'temurin'
+        cache: maven
+    - name: Build with Maven
+      run: mvn -B package --file pom.xml     
+    - run: pwd
+    
+    - name: Deploy to Linode
+      uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+      with:
+        username: abyUsr1
+        server: 139.162.18.35
+        port: 22
+        local_path: './target/*'
+        remote_path: '/home/abyUsr1/reports/'
+        sftp_only: true
+        password: ${{ secrets.LINODE_PASSWORD }}
