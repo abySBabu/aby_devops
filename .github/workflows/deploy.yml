@@ -24,9 +24,9 @@ jobs:
       
     - run: | 
         pwd
-        cd /home/runner/work/_actions/codecov/codecov-action/v3
+        cd /home/runner/work/_actions/codecov/codecov-action/
         ls -R 
-        ls -la /h/home/runner/work/_actions/codecov/codecov-action/v3ome/runner/work/aby_devops/aby_devops/
+        
     - name: Upload Code Coverage Report to Code Climate
       uses: codecov/codecov-action@v    3
       with:
