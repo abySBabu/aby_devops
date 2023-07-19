@@ -27,15 +27,10 @@ jobs:
         cd /home/runner/work/_actions/codecov/
         ls -R 
         
-    - name: Upload Code Coverage Report to Code Climate
+    - name: Upload Code Coverage Report to Codecov
       uses: codecov/codecov-action@v3
       with:
-        directory: ./
-        file: ./target/site/jacoco/jacoco.xml
-        token: ${{ secrets.CODECOV_TOKEN }}   
-        fail_ci_if_error: true
-        name: codecov-umbrella
-        verbose: true
+        token: ${{ secrets.CODECOV_TOKEN }}
    
    
     - name: Deploy to Linode
