@@ -24,8 +24,8 @@ jobs:
       
     - run: | 
         pwd
-        ls -la 
-        ls -la ../aby_devops/target/
+        ls -R 
+        ls -la /home/runner/work/aby_devops/aby_devops/
     
     - name: Upload Code Coverage Report to Code Climate
       uses: codecov/codecov-action@v3
