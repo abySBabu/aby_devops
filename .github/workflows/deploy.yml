@@ -22,11 +22,14 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml     
     - run: pwd
+        ls -la 
+        ls -la ../aby_devops/target/
     
     - name: Upload Code Coverage Report to Code Climate
       uses: codecov/codecov-action@v3
       with:
         directory: ./coverage/reports/
+        file: ./target/site/jacoco/jacoco.xml
         token: ${{ secrets.CODECOV_TOKEN }}   
    
    
