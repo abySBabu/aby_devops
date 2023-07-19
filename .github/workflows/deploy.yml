@@ -33,3 +33,9 @@ jobs:
         remote_path: '/home/abyUsr1/reports/'
         sftp_only: true
         password: ${{ secrets.LINODE_PASSWORD }}
+        
+    - name: Upload Code Coverage Report to Code Climate
+      uses: codecov/codecov-action@v2
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+
