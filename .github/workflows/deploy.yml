@@ -23,6 +23,11 @@ jobs:
       run: mvn -B package --file pom.xml     
     - run: pwd
     
+    - name: Upload Code Coverage Report to Code Climate
+      uses: codecov/codecov-action@v2
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}   
+    
     - name: Deploy to Linode
       uses: wlixcc/SFTP-Deploy-Action@v1.2.4
       with:
@@ -34,8 +39,5 @@ jobs:
         sftp_only: true
         password: ${{ secrets.LINODE_PASSWORD }}
         
-    - name: Upload Code Coverage Report to Code Climate
-      uses: codecov/codecov-action@v2
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
+
 
