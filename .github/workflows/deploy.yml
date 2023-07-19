@@ -32,7 +32,7 @@ jobs:
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         file: ./target/site/jacoco/jacoco.xml
-        root-dir: ./target/site/jacoco/
+        root_dir: ./target/site/jacoco/
     
     - run: | 
         pwd
