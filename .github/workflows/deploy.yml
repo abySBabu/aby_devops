@@ -31,8 +31,9 @@ jobs:
       uses: codecov/codecov-action@v3
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-        file: ./target/site/jacoco/jacoco.xml
-        root_dir: ./target/site/jacoco/
+        
+        file: /home/runner/work/_actions/codecov/codecov-action/v3/dist/codecov/target/site/jacoco/jacoco.xml
+        root_dir: /home/runner/work/_actions/codecov/codecov-action/v3/dist/codecov/target/site/jacoco/
     
     - run: | 
         pwd
