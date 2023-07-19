@@ -24,7 +24,7 @@ jobs:
       
     - run: | 
         pwd
-        cd /home/runner/work/_actions/codecov/codecov-action/
+        cd /home/runner/work/_actions/codecov/
         ls -R 
         
     - name: Upload Code Coverage Report to Code Climate
