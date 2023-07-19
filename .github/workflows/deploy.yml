@@ -23,9 +23,9 @@ jobs:
       run: mvn -B package --file pom.xml     
       
     - run: | 
-        pwd
-        
-        ls -R 
+        cd /home/runner/work/_actions/codecov/
+        pwd        
+        ls -R
         
     - name: Upload Code Coverage Report to Codecov
       uses: codecov/codecov-action@v3
@@ -36,9 +36,10 @@ jobs:
         root_dir: /home/runner/work/_actions/codecov/codecov-action/v3/dist/codecov/target/site/jacoco/
     
     - run: | 
-        pwd
+        cd /home/runner/work/_actions/codecov/codecov-action/v3/dist/codecov
+        pwd        
+        ls -R
         
-        ls -R 
     - name: Deploy to Linode
       uses: wlixcc/SFTP-Deploy-Action@v1.2.4
       with:
