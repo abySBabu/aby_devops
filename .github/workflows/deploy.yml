@@ -28,7 +28,7 @@ jobs:
         ls -R 
         
     - name: Upload Code Coverage Report to Code Climate
-      uses: codecov/codecov-action@v    3
+      uses: codecov/codecov-action@v3
       with:
         directory: ./coverage/reports/
         file: ./target/site/jacoco/jacoco.xml
