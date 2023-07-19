@@ -24,15 +24,20 @@ jobs:
       
     - run: | 
         pwd
-        cd /home/runner/work/_actions/codecov/
+        
         ls -R 
         
     - name: Upload Code Coverage Report to Codecov
       uses: codecov/codecov-action@v3
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-   
-   
+        file: ./target/site/jacoco/jacoco.xml
+        root: ./target/site/jacoco/
+    
+    - run: | 
+        pwd
+        
+        ls -R 
     - name: Deploy to Linode
       uses: wlixcc/SFTP-Deploy-Action@v1.2.4
       with:
