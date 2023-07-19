@@ -36,7 +36,7 @@ jobs:
         root_dir: /home/runner/work/_actions/codecov/codecov-action/v3/dist/codecov/target/site/jacoco/
     
     - run: | 
-        cd /home/runner/
+        cd /home/runner/.m2/repository/
         pwd        
         ls -R
         
